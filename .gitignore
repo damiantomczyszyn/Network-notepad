@@ -1,0 +1,17 @@
+# Ignore the installation script
+install_notatnik.sh
+
+# Virtual environment
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite database file
+*.db
+
+# Logs
+*.log
+
