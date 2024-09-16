@@ -1,4 +1,4 @@
-# Network Notepad
+# Flask Network Notepad
 
 ##The repository will contain:
 A script for installing all the necessary packages and applications on the raspberry pi 5. It will allow you to configure the port on which the application will run the network notebook.
