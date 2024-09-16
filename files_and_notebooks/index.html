@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook with File Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .note {
+            margin-bottom: 20px;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notebook with File Storage</h1>
+
+    <!-- Note Form -->
+    <form action="/add" method="post">
+        <textarea name="content" rows="4" cols="50" placeholder="Enter your note here..."></textarea><br>
+        <button type="submit">Add Note</button>
+    </form>
+
+    <h2>Your Notes:</h2>
+    <ul>
+        {% for note in notes %}
+        <li class="note">
+            {{ note[1] }} 
+            <a href="/delete/{{ note[0] }}"><button class="delete-btn">Delete</button></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- File Upload Form -->
+    <h2>Upload a File:</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload File</button>
+    </form>
+
+    <!-- List of Uploaded Files -->
+    <h2>Uploaded Files:</h2>
+    <ul>
+        {% for file in files %}
+        <li class="file">
+            <a href="/download/{{ file }}">{{ file }}</a>
+            <a href="/delete_file/{{ file }}"><button class="delete-btn">Delete</button></a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
