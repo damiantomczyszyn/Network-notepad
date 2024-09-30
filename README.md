@@ -6,4 +6,3 @@ A script for installing all the necessary packages and applications on the raspb
 ## In the future
 * The functionality will be expanded to include a file server.
 * It will have an automatically updated history of performed activities
-* 
